@@ -57,11 +57,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if IS_TEST:
     DB_FOLDER = os.path.join(BASE_DIR, 'instance_test')
     DB_FILE   = os.path.join(DB_FOLDER, 'irongym_test.db')
-    APP_PORT  = 5001
+    # Prioriza el puerto de Railway, si no existe usa 5001
+    APP_PORT  = int(os.environ.get("PORT", 5001))
 else:
     DB_FOLDER = os.path.join(BASE_DIR, 'instance')
     DB_FILE   = os.path.join(DB_FOLDER, 'irongym.db')
-    APP_PORT  = 5000
+    # Prioriza el puerto de Railway, si no existe usa 5000
+    APP_PORT  = int(os.environ.get("PORT", 5000))
 
 os.makedirs(DB_FOLDER, exist_ok=True)
 app = Flask(__name__, instance_path=DB_FOLDER)

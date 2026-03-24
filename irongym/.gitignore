@@ -1,0 +1,39 @@
+# ── Entorno Python ──────────────────────────────────────────
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# ── BASE DE DATOS (datos privados — nunca subir) ─────────────
+instance/
+instance_test/
+*.db
+*.db-wal
+*.db-shm
+
+# ── Logs y backups ───────────────────────────────────────────
+logs/
+backups/
+*.log
+
+# ── Carpeta mal creada ───────────────────────────────────────
+{templates,static/
+{templates,static
+
+# ── Sistema operativo ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+
+# ── Archivos temporales ──────────────────────────────────────
+temp_update/
+*.tmp
+nssm.exe
